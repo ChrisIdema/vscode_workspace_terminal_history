@@ -3,8 +3,10 @@
 `vscode_history.ps1` puts workspace histories in `${home}\.vscode_terminal_histories` so histories of different workspaces are not mixed.
 
 Save `vscode_history.ps1` on your PC and remember the path.
+Pass it to powershell: `Start-Process pwsh -ArgumentList "-NoExit", "-Command", "& '<path to vscode_history.ps1>'"`
+Example: `Start-Process pwsh -ArgumentList "-NoExit", "-Command", "& '${home}/.vscode_terminal_histories/vscode_history.ps1'"`
 
-VS Code Settings example(with `vscode_history.ps1` put in `${home}\.vscode_terminal_histories`):
+VS Code Settings example:
 ```
 {        
     "terminal.integrated.profiles.windows": {
@@ -39,5 +41,6 @@ VS Code Settings example(with `vscode_history.ps1` put in `${home}\.vscode_termi
             "source": "Git Bash"
 		}
 	},
-    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.scrollback": 10000
+}
 ```
